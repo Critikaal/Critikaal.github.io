@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fremvisning av arrayer</title>
+    <script>
+        window.onload = oppstart;
+
+        function oppstart() {
+
+        var opptelling = [0 ,0 ,0 ,0 ,0 ,0];
+
+        for (var i = 0; i < 1000; i++) {
+            var oyene = Math.floor(Math.random() * 6) + 1;
+            opptelling[oyene - 1]++;
+        }
+
+        for (var j = 0; j < opptelling.length; j++) {
+            var nyttElement = document.createElement("p");
+            nyttElement.innerHTML = "Antall " + (j + 1) + "'ere: " + opptelling[j];
+            document.getElementById("utskrift").appendChild(nyttElement);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="utskrift"></div>
+</body>
+</html>
