@@ -1,0 +1,76 @@
+
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+    <meta charset="utf-8" /> 
+
+    <title>Testside</title> 
+
+        <script> 
+
+ 
+
+            window.onload = oppstart; 
+
+            var avstandListe = [];
+            avstandListe[0] = [0, 222, 431, 741, 113]
+            avstandListe[1] = [72, 82, 411, 751, 113]
+            avstandListe[2] = [31, 29, 431, 7761, 113]
+            avstandListe[3] = [767, 262, 441, 781, 113]
+            avstandListe[4] = [113, 69, 420, 1337, 69420]
+
+            var sted = ["Arendal", "Grimstad", "Lillesand", "Kristiansand", "Mandal"]
+
+            function oppstart() { 
+                for (var i = 0; i < sted.length; i++) {
+                    var valg1 = document.createElement("option")
+                    valg1.innerHTML = sted[i]
+                    valg1.value = i
+                    document.getElementById("lstFra").appendChild(valg1)
+                    
+                    var valg2 = document.createElement("option")
+                    valg2.innerHTML = sted[i]
+                    valg2.value = i
+                    document.getElementById("lstTil").appendChild(valg2)
+}
+            document.getElementById("btnBeregn").onclick = beregn
+            } 
+
+function beregn() {
+    var fraIndex = document.getElementById("lstFra").value
+    var tilIndex = document.getElementById("lstTil").value
+
+    var avstand = avstandListe[fraIndex] [tilIndex]
+
+    document.getElementById("utskrift").innerHTML = "Avstanden fra " + sted[fraIndex] + " til " + sted[tilIndex] + " er " + avstand + " kilometer."
+}
+
+ 
+
+        </script> 
+
+ 
+
+    
+
+ 
+
+</head> 
+
+ 
+
+<body> 
+
+    <p>
+        Fra: <select id="lstFra"></select><br />
+        Til: <select id="lstTil"></select><br />
+        <button id="btnBeregn">Beregn</button>
+    </p>
+    <p id="utskrift"></p>
+
+</body> 
+
+</html> 
