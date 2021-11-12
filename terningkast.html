@@ -21,6 +21,11 @@
             var nyttElement = document.createElement("p");
             nyttElement.innerHTML = "Antall " + (j + 1) + "'ere: " + opptelling[j];
             document.getElementById("utskrift").appendChild(nyttElement);
+
+            var nyGraf = document.createElement("span")
+            nyGraf.className = "graf"
+            nyGraf.style.width = opptelling[j] + "px"
+            nyttElement.appendChild(nyGraf)
         }
     }
     </script>
