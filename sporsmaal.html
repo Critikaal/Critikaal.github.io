@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+    <meta charset="utf-8" /> 
+
+    <title>Testside</title> 
+
+        <script> 
+
+ 
+
+            window.onload = oppstart; 
+
+    var sporsmaal = [];
+    sporsmaal[0] = {tekst: "Hva heter hovedstaden i Norge", alt1: "Stockholm", alt2: "Oslo", alt3: "Paris", riktig:2}
+    sporsmaal[1] = {tekst: "Hva er 2+7", alt1: "4", alt2: "5", alt3: "9", riktig:3}
+    sporsmaal[2] = {tekst: "Hva er en fossekall", alt1: "Fugl", alt2: "Hest", alt3: "Fisk", riktig:1}
+
+    var poeng = 0
+    var sporsmaalIndex = -1
+    var harSvart = false
+
+
+            function oppstart() { 
+                document.getElementById("alt1").onclick = svar
+                document.getElementById("alt2").onclick = svar
+                document.getElementById("alt3").onclick = svar
+                document.getElementById("btnNeste").onclick = neste
+
+                document.getElementById("poeng").onclick = poeng
+
+                neste()
+
+            } 
+function svar(evt) {
+    if (harSvart == false){
+        var svar
+
+        if(evt.target == document.getElementById("alt1")) {
+            svar = 1
+        }
+
+        if(evt.target ===document.getElementById("alt2")) {
+            svar = 2
+        }
+
+        if(evt.target ===document.getElementById("alt3")) {
+            svar = 3
+        }
+
+        if(svar == sporsmaal[sporsmaalIndex].riktig) {
+            poeng++
+            evt.target.className = "riktig"
+        }
+        else {
+            evt.target.className = "feil"
+        }
+
+        harSvart = true
+        document.getElementById("poeng").innerHTML = poeng
+    }
+}
+
+function neste() {
+    sporsmaalIndex++
+
+    document.getElementById("sporsmaalstekst").innerHTML = sporsmaal[sporsmaalIndex].tekst + "?"
+    document.getElementById("alt1").innerHTML = sporsmaal[sporsmaalIndex].alt1
+    document.getElementById("alt1").className = " "
+    document.getElementById("alt2").innerHTML = sporsmaal[sporsmaalIndex].alt2
+    document.getElementById("alt2").className = " "
+    document.getElementById("alt3").innerHTML = sporsmaal[sporsmaalIndex].alt3
+    document.getElementById("alt3").className = " "
+
+    harSvart = false
+
+    if (sporsmaalIndex >= sporsmaal.length - 1) {
+        document.getElementById("btnNeste").disabled = true
+    }
+}
+
+ 
+
+        </script> 
+
+ 
+
+    
+
+ 
+
+</head> 
+
+ 
+
+<body> 
+
+    <p id="sporsmaalstekst"></p>
+<ul>
+    <li id="alt1"></li>
+    <li id="alt2"></li>
+    <li id="alt3"></li>
+</ul>
+<p id="utskrift"></p>
+<button id="btnNeste">Neste spørsmål</button>
+<p>Poeng: <span id="poeng">0</span></p>
+
+</body> 
+
+<style>
+    .riktig {color:green;}
+    .feil {color:red;}
+    li {cursor:pointer;}
+</style>
+
+</html> 
