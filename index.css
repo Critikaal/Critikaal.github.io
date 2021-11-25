@@ -1,0 +1,78 @@
+.box {
+    border-style: ridge;
+    border-width: thick;
+    border-color: hotpink;
+}
+
+body {
+    background-color: #05032c
+
+
+
+    ;
+    color: white;
+    
+}
+h1 {
+    color: rgb(0, 234, 255);
+}
+p {
+    color: firebrick
+}
+
+
+
+a:link {
+    color: red;
+  }
+  
+
+  a:visited {
+    color: rgb(0, 255, 0);
+  }
+  
+
+  a:hover {
+    color: rgb(255, 0, 128);
+  }
+  
+
+  a:active {
+    color: rgb(125, 125, 255);
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(195, 0, 255);
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+  
+  li {
+    float: left;
+    border-right:1px solid rgb(251, 255, 0);
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
