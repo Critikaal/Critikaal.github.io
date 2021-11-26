@@ -5,37 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fremvisning av arrayer</title>
+    <title>I used to roll the dice</title>
     <script>
         window.onload = oppstart;
 
         function oppstart() {
 
         var opptelling = [0 ,0 ,0 ,0 ,0 ,0];
-
+            //kaster terningen 1000 ganger med å velge et tilfedlig tall fra 1-6. så legger den disse resultatene inn i en array som heter opptelling
         for (var i = 0; i < 1000; i++) {
             var oyene = Math.floor(Math.random() * 6) + 1;
             opptelling[oyene - 1]++;
         }
-
+            //Teller opp hvor mange ganger terningen landet på hver side og skriver dette inn på siden
         for (var j = 0; j < opptelling.length; j++) {
             var nyttElement = document.createElement("p");
             nyttElement.innerHTML = "Antall " + (j + 1) + "'ere: " + opptelling[j];
             document.getElementById("utskrift").appendChild(nyttElement);
-
+            //lager en graf som skal vises etter teksten så man ser hvor lett hvilken side terningen landet mest på
             var nyGraf = document.createElement("span")
             nyGraf.className = "graf"
             nyGraf.style.width = opptelling[j] + "px"
             nyttElement.appendChild(nyGraf)
 
-            //document.getElementById("utskrift").appendChild(nyGraf) ABD BADBA BDA BDA BDA B DAB DABD BAD B DBADBA
+            //document.getElementById("utskrift").appendChild(nyGraf)       
+            //står i boka men ødelegger koden hvis man bruker den
         }
     }
     </script>
+    <!--Legger inn grafene visuelt bak antall f.eks 6'ere man ruller-->
     <style>
         span.graf {
             background-color: red;
-            height: 20px;
+            height: 30px;
             display: inline-block;
             margin-left: 10px;
         }
@@ -49,6 +51,7 @@
         <li><a href="sporsmaal.html">My riddles three</a></li>
         <li><a href="20-sided die.html">20 sided dice</a></li>
       </ul>
+      <!--viser resultatet av terningkast på nettsiden-->
     <div id="utskrift"></div>
 </body>
 </html>
