@@ -3,6 +3,12 @@
     border-width: thick;
     border-color: hotpink;
 }
+.box2 {
+  border-style: outset solid double solid  ;
+  border-width: thick;
+  border-color: rgb(72, 255, 0);
+  padding-left: 30px
+}
 
 body {
     background-color: #05032c
@@ -24,6 +30,7 @@ p {
 
 a:link {
     color: red;
+    text-decoration:none ;
   }
   
 
