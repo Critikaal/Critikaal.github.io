@@ -53,5 +53,52 @@
       </ul>
       <!--viser resultatet av terningkast på nettsiden-->
     <div id="utskrift"></div>
+<br>
+    <hr>
+    <h1>FORKLARING</h1>
+    <div class="box2">
+    <p>Først så lager vi en array som heter opptelling som skal telle opp hvor mange ganger terningen ruller f.eks 1. Så lager vi en for-løkke som skal velge et tilfeldig tall mellom en og seks 1000 ganger som skal simulere å kaste 1000 terninger.</p>
+    <div class="box3">
+    <pre>
+function oppstart() {
+
+    var opptelling = [0 ,0 ,0 ,0 ,0 ,0];
+    
+    for (var i = 0; i < 1000; i++) {
+        var oyene = Math.floor(Math.random() * 6) + 1;
+        opptelling[oyene - 1]++;
+            }
+    </pre>
+</div>
+<br>
+<p>Så har vi en for-løkke som skal skrive inn på siden hvor mange ganger "terningen" landet på hver side.</p>
+<div class="box3">
+<pre>
+for (var j = 0; j < opptelling.length; j++) {
+    var nyttElement = document.createElement("p");
+    nyttElement.innerHTML = "Antall " + (j + 1) + "'ere: " + opptelling[j];
+    document.getElementById("utskrift").appendChild(nyttElement);
+</pre>
+</div>
+<p>Så skal vi lage en graf og bestemme hvordan den ser ut. dette er "inputten" til grafen eller hva grafen skal gjøre</p>
+<div class="box3">
+<pre>
+var nyGraf = document.createElement("span")
+nyGraf.className = "graf"
+nyGraf.style.width = opptelling[j] + "px"
+nyttElement.appendChild(nyGraf)
+</pre>
+<p>Dette lager da en graf som viser hvor mange ganger terningen landet på hver side. Grafen skal være like mange piksler lang som antall ganger terningen landet på f.eks 2.</p>
+<pre>
+span.graf {
+    background-color: red;
+    height: 30px;
+    display: inline-block;
+    margin-left: 10px;
+</pre>
+<p>Dette er designet til grafen, hvordan den ser ut.</p>
+</div>
+<br>
+</div>
 </body>
 </html>
