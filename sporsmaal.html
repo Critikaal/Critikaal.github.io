@@ -104,87 +104,26 @@ function neste() {
         <li><a href="avstand.html">How far will you go</a></li>
         <li><a class="active" href="sporsmaal.html">My riddles three</a></li>
       </ul>
-
     <p id="sporsmaalstekst"></p>
 <ul>
     <li id="alt1"></li>
     <li id="alt2"></li>
     <li id="alt3"></li>
 </ul>
-
 <p id="utskrift"></p>
 <button id="btnNeste">Neste spørsmål</button>
 <p>Poeng: <span id="poeng">0</span></p>
-
 <hr>
 <h1>FORKLARING</h1>
 <div class="box2">
-<p>Denne quizzen bruker en array som har en tekst verdi som blir brukt for spørsmålet og 3 alt verdier som virker som svar alternativene. den har også en verdi som heter riktig som sier om alt1,alt2 eller alt3 er det riktige svaret.</p> <br>
-<div class="box3">
-<!--<pre> taggen viser direkte hva du skriver inn uten noen endring i formatering-->
+<p>Denne quizzen bruker en array som har en tekst verdi som blir brukt for spørsmålet og 3 alt verdier som virker som svar alternativene. den har også en verdi som heter riktig som sier om alt1,alt2 eller alt3 er det riktige svaret.</p>
 <pre>
-var sporsmaal = [];
-sporsmaal[0] = {tekst: "Hva heter hovedstaden i Norge", alt1: "Stockholm", alt2: "Oslo", alt3: "Paris", riktig:2}
-sporsmaal[1] = {tekst: "Hva er 2+7", alt1: "4", alt2: "5", alt3: "9", riktig:3}
-sporsmaal[2] = {tekst: "Hva er en fossekall", alt1: "Fugl", alt2: "Hest", alt3: "Fisk", riktig:1}
-</pre> <br><br><br>
-</div>
-<p> så legger jeg inn en funksjon som sjekker om brukeren har svart på spørsmålet dem får, hvis de har det kan de ikke trykke på de andre svar alternativene, de får se om de valgte riktig eller feil svar og om de svarte riktig får de 1 poeng. og hvis det ikke er noen flere spørsmål blir neste knappen slått av. </p> <br>
-<div class="box3">
-<pre>
-function svar(evt) {
-    if (harSvart == false){
-         var svar
-    
-        if(evt.target == document.getElementById("alt1")) {
-            svar = 1
-         }
-    
-        if(evt.target ===document.getElementById("alt2")) {
-             svar = 2
-         }
-    
-         if(evt.target ===document.getElementById("alt3")) {
-                svar = 3
-         }
-    
-         if(svar == sporsmaal[sporsmaalIndex].riktig) {
-                 poeng++
-              evt.target.className = "riktig"
-         }
-         else {
-              evt.target.className = "feil"
-         }
-    
-          harSvart = true
-           document.getElementById("poeng").innerHTML = poeng
-     }
- }
+    var sporsmaal = [];
+    sporsmaal[0] = {tekst: "Hva heter hovedstaden i Norge", alt1: "Stockholm", alt2: "Oslo", alt3: "Paris", riktig:2}
+    sporsmaal[1] = {tekst: "Hva er 2+7", alt1: "4", alt2: "5", alt3: "9", riktig:3}
+    sporsmaal[2] = {tekst: "Hva er en fossekall", alt1: "Fugl", alt2: "Hest", alt3: "Fisk", riktig:1}
 </pre>
-</div>
-<br>
-<p>så er det å legge verdiene til svaralternativene inn som en id så jeg kan kalle de opp senere sepperat fra arrayen</p>
-<pre>
-function neste() {
-        sporsmaalIndex++
-    
-    document.getElementById("sporsmaalstekst").innerHTML = sporsmaal[sporsmaalIndex].tekst + "?"
-    document.getElementById("alt1").innerHTML = sporsmaal[sporsmaalIndex].alt1
-    document.getElementById("alt1").className = " "
-    document.getElementById("alt2").innerHTML = sporsmaal[sporsmaalIndex].alt2
-    document.getElementById("alt2").className = " "
-    document.getElementById("alt3").innerHTML = sporsmaal[sporsmaalIndex].alt3
-    document.getElementById("alt3").className = " "
-    
-    harSvart = false
-    
-    if (sporsmaalIndex >= sporsmaal.length - 1) {
-        document.getElementById("btnNeste").disabled = true
-    }
-}
-</pre>
-<p>det siste spesielle å gjøre er å legge inn en liste med id-ene til svaralternativene så man kan velge de. </p>
-
+<p> </p>
 
 </div>
 </body> 
