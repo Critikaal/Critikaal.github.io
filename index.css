@@ -26,10 +26,13 @@ padding-bottom: 5px;
 
 }
 .candycane {
-  border-image: url(border.png);
-  border-image-repeat: round;
+  border-image:url(candycane_border.png)
 
 }
+
+
+
+
 
 body {
     background-color: lightblue;
@@ -47,18 +50,18 @@ p {
 
 
 a:link {
-    color: firebrick;
+    color: lightcoral;
     text-decoration:none ;
   }
   
 
   a:visited {
-    color: blue;
+    color: lightblue;
   }
   
 
   a:hover {
-    color: firebrick;
+    color: lightcoral;
   }
   
 
@@ -71,7 +74,7 @@ a:link {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: snow;
+    background-color: green;
     position: sticky;
     top: 0;
     width: 100%;
@@ -79,7 +82,7 @@ a:link {
   
   li {
     float: left;
-    border-right:2px solid firebrick;
+    border-right:2px solid lightcoral;
   }
   
   
