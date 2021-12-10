@@ -9,6 +9,7 @@
   border-color: rgb(72, 255, 0);
   padding-left: 30px
 }
+<<<<<<< HEAD
 .box3 {
   border-style: double  ;
   border-width: thin;
@@ -19,6 +20,8 @@
 border-style: outset;
 border-color: red;
 padding-bottom: 5px;
+=======
+>>>>>>> parent of 7d50228 (nlk)
 
 
 }
